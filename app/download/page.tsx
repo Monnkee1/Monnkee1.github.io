@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const DESTINATION = "https://drivesift-vault.adumbnut72826.chatgpt.site/";
+const DESTINATION = "https://vault.drivesift.com/";
 
 export default function DownloadRedirect() {
   useEffect(() => {

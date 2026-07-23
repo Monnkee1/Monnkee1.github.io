@@ -2,8 +2,7 @@
 
 import { useEffect } from "react";
 
-const DESTINATION =
-  "https://drivesift-vault.adumbnut72826.chatgpt.site/admin";
+const DESTINATION = "https://vault.drivesift.com/admin";
 
 export default function AdminRedirect() {
   useEffect(() => {
