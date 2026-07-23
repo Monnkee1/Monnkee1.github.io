@@ -36,10 +36,14 @@ export default function Home() {
     const payload = Object.fromEntries(new FormData(form).entries());
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formsubmit.co/ajax/info@drivesift.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...payload,
+          _subject: "New DriveSift inquiry",
+          _template: "table",
+        }),
       });
       if (!response.ok) throw new Error("Submission failed");
       form.reset();
@@ -197,7 +201,7 @@ export default function Home() {
             </label>
             <label className="website-field" aria-hidden="true">
               <span>Website</span>
-              <input name="website" tabIndex={-1} autoComplete="off" />
+              <input name="_honey" tabIndex={-1} autoComplete="off" />
             </label>
             <button className="button button-primary button-full" type="submit" disabled={formStatus === "sending"}>
               {formStatus === "sending" ? "Sending…" : "Contact DriveSift"}<span>→</span>
